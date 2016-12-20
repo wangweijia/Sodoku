@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		18C3CA1A1E065B8D007A1527 /* BoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C3CA191E065B8D007A1527 /* BoxView.m */; };
 		18C3CA1C1E065BA6007A1527 /* BoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C3CA1B1E065BA6007A1527 /* BoxView.xib */; };
+		18C3CA201E06C05D007A1527 /* SodoKuGo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C3CA1F1E06C05D007A1527 /* SodoKuGo.m */; };
+		18C3CA231E06CBF3007A1527 /* CustomConentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C3CA221E06CBF3007A1527 /* CustomConentView.m */; };
 		18EB38031E00465A006183A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB38021E00465A006183A6 /* AppDelegate.m */; };
 		18EB38061E00465A006183A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB38051E00465A006183A6 /* main.m */; };
 		18EB38091E00465A006183A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB38081E00465A006183A6 /* ViewController.m */; };
@@ -21,6 +23,10 @@
 		18C3CA181E065B8D007A1527 /* BoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxView.h; sourceTree = "<group>"; };
 		18C3CA191E065B8D007A1527 /* BoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxView.m; sourceTree = "<group>"; };
 		18C3CA1B1E065BA6007A1527 /* BoxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoxView.xib; sourceTree = "<group>"; };
+		18C3CA1E1E06C05D007A1527 /* SodoKuGo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SodoKuGo.h; sourceTree = "<group>"; };
+		18C3CA1F1E06C05D007A1527 /* SodoKuGo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SodoKuGo.m; sourceTree = "<group>"; };
+		18C3CA211E06CBF3007A1527 /* CustomConentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomConentView.h; sourceTree = "<group>"; };
+		18C3CA221E06CBF3007A1527 /* CustomConentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomConentView.m; sourceTree = "<group>"; };
 		18EB37FE1E00465A006183A6 /* Sodoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sodoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EB38011E00465A006183A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18EB38021E00465A006183A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,8 +57,19 @@
 				18C3CA181E065B8D007A1527 /* BoxView.h */,
 				18C3CA191E065B8D007A1527 /* BoxView.m */,
 				18C3CA1B1E065BA6007A1527 /* BoxView.xib */,
+				18C3CA211E06CBF3007A1527 /* CustomConentView.h */,
+				18C3CA221E06CBF3007A1527 /* CustomConentView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		18C3CA1D1E06C038007A1527 /* methods */ = {
+			isa = PBXGroup;
+			children = (
+				18C3CA1E1E06C05D007A1527 /* SodoKuGo.h */,
+				18C3CA1F1E06C05D007A1527 /* SodoKuGo.m */,
+			);
+			name = methods;
 			sourceTree = "<group>";
 		};
 		18EB37F51E00465A006183A6 = {
@@ -74,6 +91,7 @@
 		18EB38001E00465A006183A6 /* Sodoku */ = {
 			isa = PBXGroup;
 			children = (
+				18C3CA1D1E06C038007A1527 /* methods */,
 				18C3CA171E065AE3007A1527 /* Views */,
 				18EB38151E00472A006183A6 /* Models */,
 				18EB38011E00465A006183A6 /* AppDelegate.h */,
@@ -177,8 +195,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C3CA231E06CBF3007A1527 /* CustomConentView.m in Sources */,
 				18EB38091E00465A006183A6 /* ViewController.m in Sources */,
 				18EB38061E00465A006183A6 /* main.m in Sources */,
+				18C3CA201E06C05D007A1527 /* SodoKuGo.m in Sources */,
 				18EB38031E00465A006183A6 /* AppDelegate.m in Sources */,
 				18C3CA1A1E065B8D007A1527 /* BoxView.m in Sources */,
 				18EB38191E004776006183A6 /* Grid.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "BoxView.h"
+#import "SodoKuGo.h"
 
 @interface ViewController ()
 
@@ -38,7 +39,8 @@
 
 - (void)configBoxView {
     CGFloat wh = self.customConentView.frame.size.height / 3.0;
-    
+    self.boxViewArray = [NSMutableArray array];
+
     for (NSInteger i = 0; i < 9; i++) {
         CGFloat x = wh * ( i % 3);
         CGFloat y = wh * ( i / 3);
@@ -55,13 +57,16 @@
 }
 
 - (IBAction)go:(id)sender {
-    NSMutableArray *a = [NSMutableArray array];
-    for (NSInteger i = 0; i < 9; i++) {
-        Grid *g = [[Grid alloc] initWithAnswer:1];
-        [a addObject:g];
-    }
-    
-    _boxViewArray[2].gridArray = a;
+    SodoKuGo *go = [[SodoKuGo alloc] initWithBoxViews:_boxViewArray];
+//    NSLog(@"dd");
+    [go goSodoKu];
+//    NSMutableArray *a = [NSMutableArray array];
+//    for (NSInteger i = 0; i < 9; i++) {
+//        Grid *g = [[Grid alloc] initWithAnswer:1];
+//        [a addObject:g];
+//    }
+//    BoxView *b = self.boxViewArray[2];
+//    b.gridArray = a;
 }
 
 - (IBAction)clear:(id)sender {

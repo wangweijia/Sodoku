@@ -30,6 +30,11 @@
 @property (weak) IBOutlet NSTextField *textField8;
 @property (weak) IBOutlet NSTextField *textField9;
 
+/**
+ 模型数组
+ */
+@property (nonatomic, strong) NSMutableArray<Grid *> *originalGridArray;
+
 @end
 
 @implementation BoxView
@@ -39,7 +44,26 @@
     
     if (self.view.subviews) {
         _numberArray = [@[_textField1,_textField2,_textField3,_textField4,_textField5,_textField6,_textField7,_textField8,_textField9] mutableCopy];
+        
+        [self updateOriginalGridArray];
     };
+}
+
+- (void)updateOriginalGridArray {
+    self.originalGridArray = [NSMutableArray array];
+    
+    for (NSTextField *text in _numberArray) {
+        NSInteger answer = [text.stringValue integerValue];
+        Grid *g = [[Grid alloc] initWithAnswer:answer];
+        [self.originalGridArray addObject:g];
+    }
+}
+
+- (void)updateAnswer {
+    for (NSInteger i = 0; i < _originalGridArray.count; i++) {
+        Grid *g = _originalGridArray[i];
+        _numberArray[i].stringValue = [NSString stringWithFormat:@"%@",@(g.answer)];
+    }
 }
 
 - (instancetype)initWithFrame:(NSRect)frameRect {
@@ -72,8 +96,7 @@
         case BoxViewNumbersTypeHor: {
             for (NSInteger i = 0; i < 3; i++) {
                 NSInteger n = index * 3 + i;
-                NSInteger answer = [_numberArray[n].stringValue integerValue];
-                Grid *g = [[Grid alloc] initWithAnswer:answer];
+                Grid *g = _originalGridArray[n];
                 [array addObject:g];
             }
         }
@@ -81,8 +104,7 @@
         case BoxViewNumbersTypeVer: {
             for (NSInteger i = 0; i < 3; i++) {
                 NSInteger n = index + i * 3;
-                NSInteger answer = [_numberArray[n].stringValue integerValue];
-                Grid *g = [[Grid alloc] initWithAnswer:answer];
+                Grid *g = _originalGridArray[n];
                 [array addObject:g];
             }
         }
@@ -95,15 +117,22 @@
 }
 
 - (NSArray<Grid *> *)boxViewAllNubers {
-    NSMutableArray *array = [NSMutableArray array];
+    return _originalGridArray;
+}
 
-    for (NSInteger i = 0; i < _numberArray.count; i++) {
-        NSInteger answer = [_numberArray[i].stringValue integerValue];
-        Grid *g = [[Grid alloc] initWithAnswer:answer];
-        [array addObject:g];
+- (void)clearBoxTempNumbers {
+    NSMutableArray *tempAnswer = [NSMutableArray array];
+    for (Grid *g in _originalGridArray) {
+        if ([g haveAnswer]) {
+            [tempAnswer addObject:@(g.answer)];
+        }
     }
     
-    return array;
+    for (NSNumber *n in tempAnswer) {
+        for (Grid *g in _originalGridArray) {
+            [g removeTempNmber:[n integerValue]];
+        }
+    }
 }
 
 - (void)setGridArray:(NSArray<Grid *> *)gridArray {

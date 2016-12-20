@@ -33,6 +33,16 @@ typedef NS_ENUM(NSInteger, BoxViewNumbersType) {
 @property (nonatomic, strong) NSArray<Grid *> *gridArray;
 
 /**
+ 初始化数据源
+ */
+- (void)updateOriginalGridArray;
+
+/**
+ 跟新 answer
+ */
+- (void)updateAnswer;
+
+/**
  返回 某行 或 某列 数字
 
  @param type 行还是列
@@ -42,9 +52,12 @@ typedef NS_ENUM(NSInteger, BoxViewNumbersType) {
 - (NSArray<Grid *> *)boxViewNumbersWithType:(BoxViewNumbersType)type index:(NSInteger)index;
 
 /**
- 获取 9 格数字
+ 清空 无用临时数据
+ */
+- (void)clearBoxTempNumbers;
 
- @return <#return value description#>
+/**
+ 获取 9 格数字
  */
 - (NSArray<Grid *> *)boxViewAllNubers;
 

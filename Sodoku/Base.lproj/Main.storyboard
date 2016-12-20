@@ -687,7 +687,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="390"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Dr0-qC-CRo">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Dr0-qC-CRo" customClass="CustomConentView">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="390"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Dr0-qC-CRo" secondAttribute="height" multiplier="1:1" id="ZrT-4x-Yd3"/>
